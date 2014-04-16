@@ -17,6 +17,7 @@
 
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
 //    _customButton
     self.redColorSlider.value = self.customButton.red;
     self.greenColorSlider.value = self.customButton.green;

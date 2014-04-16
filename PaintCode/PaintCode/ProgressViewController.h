@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Felipe Laso Marsetti. All rights reserved.
 //
 
+@class ProgressView;
 @interface ProgressViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet ProgressView *progressView;
 
 @end
