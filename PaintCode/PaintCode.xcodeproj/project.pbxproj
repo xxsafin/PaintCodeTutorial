@@ -28,6 +28,7 @@
 		55BBC3D7174C51E50049829D /* Progress_TabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BBC3D1174C51E50049829D /* Progress_TabIcon@2x.png */; };
 		D73A9DA818FE511000AF71A3 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = D73A9DA718FE511000AF71A3 /* ButtonView.m */; };
 		D73A9DB718FE7D3800AF71A3 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D73A9DB618FE7D3800AF71A3 /* ProgressView.m */; };
+		D73A9DBA18FEAE4900AF71A3 /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = D73A9DB918FEAE4900AF71A3 /* BezierView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		D73A9DA718FE511000AF71A3 /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
 		D73A9DB518FE7D3800AF71A3 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		D73A9DB618FE7D3800AF71A3 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		D73A9DB818FEAE4900AF71A3 /* BezierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierView.h; sourceTree = "<group>"; };
+		D73A9DB918FEAE4900AF71A3 /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				D73A9DA718FE511000AF71A3 /* ButtonView.m */,
 				D73A9DB518FE7D3800AF71A3 /* ProgressView.h */,
 				D73A9DB618FE7D3800AF71A3 /* ProgressView.m */,
+				D73A9DB818FEAE4900AF71A3 /* BezierView.h */,
+				D73A9DB918FEAE4900AF71A3 /* BezierView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				55BBC3A2174C4FCE0049829D /* main.m in Sources */,
 				55BBC3A6174C4FCE0049829D /* AppDelegate.m in Sources */,
 				55BBC3B2174C4FCE0049829D /* ButtonViewController.m in Sources */,
+				D73A9DBA18FEAE4900AF71A3 /* BezierView.m in Sources */,
 				55BBC3B9174C4FCE0049829D /* ProgressViewController.m in Sources */,
 				D73A9DA818FE511000AF71A3 /* ButtonView.m in Sources */,
 				D73A9DB718FE7D3800AF71A3 /* ProgressView.m in Sources */,
