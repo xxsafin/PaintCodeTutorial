@@ -26,6 +26,7 @@
 		55BBC3D5174C51E50049829D /* Button_TabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BBC3CF174C51E50049829D /* Button_TabIcon@2x.png */; };
 		55BBC3D6174C51E50049829D /* Progress_TabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BBC3D0174C51E50049829D /* Progress_TabIcon.png */; };
 		55BBC3D7174C51E50049829D /* Progress_TabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55BBC3D1174C51E50049829D /* Progress_TabIcon@2x.png */; };
+		D73A9DA818FE511000AF71A3 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = D73A9DA718FE511000AF71A3 /* ButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		55BBC3CF174C51E50049829D /* Button_TabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button_TabIcon@2x.png"; sourceTree = "<group>"; };
 		55BBC3D0174C51E50049829D /* Progress_TabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Progress_TabIcon.png; sourceTree = "<group>"; };
 		55BBC3D1174C51E50049829D /* Progress_TabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Progress_TabIcon@2x.png"; sourceTree = "<group>"; };
+		D73A9DA618FE511000AF71A3 /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
+		D73A9DA718FE511000AF71A3 /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,8 @@
 		55BBC3D9174C52130049829D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D73A9DA618FE511000AF71A3 /* ButtonView.h */,
+				D73A9DA718FE511000AF71A3 /* ButtonView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				55BBC3A6174C4FCE0049829D /* AppDelegate.m in Sources */,
 				55BBC3B2174C4FCE0049829D /* ButtonViewController.m in Sources */,
 				55BBC3B9174C4FCE0049829D /* ProgressViewController.m in Sources */,
+				D73A9DA818FE511000AF71A3 /* ButtonView.m in Sources */,
 				55BBC3CB174C506D0049829D /* BezierViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
