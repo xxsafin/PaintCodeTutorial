@@ -12,6 +12,8 @@ typedef void(^BezierViewReleaseHandler)(CGPoint releasePoint);
 
 @interface BezierView : UIView
 
+@property (assign, nonatomic, readonly) CGRect rightArrowFrame;
+
 @property (copy, nonatomic) BezierViewReleaseHandler releaseHandler;
 
 -(id)initWithLeftArrowTipPoint:(CGPoint)leftArrowTip

@@ -62,7 +62,96 @@ typedef enum {
     }
     
     return self;
+}
+
+-(CGRect)rightArrowFrame
+{
+    return CGRectMake(_rightArrowTip.x - kArrowFrameWidth,
+                      _rightArrowTip.y - kArrowFrameHeightHalf,
+                      kArrowFrameWidth,
+                      kArrowFrameHeight);
+}
+
+#pragma mark - Touch Handling
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if(CGRectContainsPoint(self.rightArrowFrame, point))
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _touchState = TouchStateInvalid;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint touchPoint = [[touches anyObject] locationInView:self];
     
+    if(CGRectContainsPoint(self.rightArrowFrame, touchPoint))
+    {
+        _touchState = TouchStateRightArrow;
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(_touchState == TouchStateRightArrow)
+    {
+        CGPoint touchPoint = [[touches anyObject] locationInView:self];
+        
+        if(touchPoint.y >= _leftArrowTip.y)
+        {
+            _leftArrowTip = CGPointMake(0, kArrowFrameHeightHalf);
+            _rightArrowTip = CGPointMake(_rightArrowTip.x, touchPoint.y);
+            
+            self.frame = CGRectMake(_initialOrigin.x,
+                                    _initialOrigin.y,
+                                    self.frame.size.width,
+                                    touchPoint.y + kArrowFrameHeightHalf);
+        }
+        else
+        {
+            CGFloat newYPosition = [self convertPoint:touchPoint toView:self.superview].y - kArrowFrameHeightHalf;
+            
+            CGFloat newHeight = _initialLeftArrowTipY - newYPosition + kArrowFrameHeight;
+            
+            self.frame = CGRectMake(_initialOrigin.x,
+                                    newYPosition,
+                                    self.frame.size.width,
+                                    newHeight);
+            
+            _leftArrowTip = CGPointMake(0,
+                                        newHeight - kArrowFrameHeightHalf);
+            _rightArrowTip = CGPointMake(_rightArrowTip.x,
+                                         kArrowFrameHeightHalf);
+        }
+        
+        [self setNeedsDisplay];
+    }
+    else
+    {
+        //do nothing
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _touchState = TouchStateInvalid;
+    
+    //judge for release
+    if(self.releaseHandler)
+    {
+        CGPoint superViewPosition = [self convertPoint:_rightArrowTip toView:self.superview];
+        
+        self.releaseHandler(superViewPosition);
+    }
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -99,11 +188,7 @@ typedef enum {
                               _leftArrowTip.y - kArrowFrameHeightHalf,
                               kArrowFrameWidth,
                               kArrowFrameHeight);
-    CGRect frame2 = CGRectMake(_rightArrowTip.x - kArrowFrameWidth,
-                               _rightArrowTip.y - kArrowFrameHeightHalf,
-                               kArrowFrameWidth,
-                               kArrowFrameHeight);
-    
+    CGRect frame2 = self.rightArrowFrame;
     
     //// Bezier Drawing
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
@@ -162,12 +247,9 @@ typedef enum {
     bezierPath.lineWidth = 1;
     [bezierPath stroke];
     
-    
     //// Cleanup
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
-    
-
 }
 
 @end
